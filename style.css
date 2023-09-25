@@ -1,0 +1,261 @@
+/* Mobile-First Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto;
+  font-size: 16px;
+}
+
+p {
+  color: hsl(227, 4%, 51%);
+}
+
+.first-section .desktop-svg {
+  display: none;
+}
+
+.second-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.sign-description {
+  width: 85%;
+}
+
+.sign-description h1 {
+  margin-bottom: 18px;
+  font-size: 40px;
+  color: hsl(235, 18%, 26%);
+}
+
+.sign-description:first-child p {
+  margin-bottom: 18px;
+}
+.sign-description p {
+  line-height: 24px;
+}
+.list-content {
+  display: flex;
+}
+
+.list-img {
+  margin-right: 12px;
+}
+
+.sign-layout {
+  width: 85%;
+  margin-top: 15px;
+}
+
+.sign-layout .label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-layout .label .invalid-notice {
+  color: hsl(4, 100%, 67%);
+}
+
+.sign-layout label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sign-layout input[type="email"] {
+  width: 100%;
+  border: 1px solid hsl(0, 0%, 50%);
+  padding: 16px 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.sign-layout button {
+  width: 100%;
+  padding: 16px 0;
+  font-weight: 700;
+  border: none;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* success message styles */
+.success-message {
+  border: 1px solid;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 80px 20px 20px;
+}
+
+.success-message h1 {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+  margin: 25px 0;
+  color: hsl(235, 18%, 26%);
+}
+
+.success-message p {
+  line-height: 25px;
+  color: hsl(227, 4%, 51%);
+}
+
+.success-message p .style-email {
+  color: hsl(235, 18%, 26%);
+  font-weight: 700;
+}
+
+.dismiss-message {
+  position: absolute;
+  bottom: 5%;
+  left: 20px;
+  right: 20px;
+}
+
+.dismiss-message button {
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: hsl(234, 29%, 20%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+/* End of success message styles */
+
+/* hidden class styles */
+.hidden {
+  display: none;
+}
+/* End of hidden class styles */
+
+/* Error class styles */
+.error {
+  background-color: hsla(4, 100%, 67%, 0.2);
+  color: hsl(4, 100%, 67%);
+  border: 1px solid hsl(4, 100%, 67%);
+}
+/* End of Error class styles */
+
+/* attribute class styles */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
+/* End of attribute class styles */
+
+/* End of Mobile-First Styles*/
+
+/* Media query Desktop view */
+@media screen and (min-width: 1024px) {
+  body {
+    background-color: hsl(234, 29%, 20%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  main {
+    display: flex;
+    width: 920px;
+    justify-content: center;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    padding: 20px;
+    position: relative;
+  }
+  .section {
+    width: 50%;
+    transition: transform 0.5s ease;
+  }
+  .first-section {
+    transform: translateX(100%);
+    display: flex;
+    justify-content: right;
+  }
+
+  /* Switch SVGs */
+  .first-section .mobile-svg {
+    display: none;
+  }
+
+  .first-section .desktop-svg {
+    display: block;
+  }
+  /* End of switch SVGs */
+
+  .second-section {
+    transform: translateX(-100%);
+    padding: 70px 0 0 40px;
+  }
+
+  .second-section .sign-description,
+  .sign-layout {
+    width: 95%;
+  }
+
+  .second-section h1 {
+    font-size: 3rem;
+  }
+
+  .success-message {
+    width: 430px;
+    height: 450px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+  }
+
+  .success-message h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .success-message p {
+    font-size: 15px;
+  }
+
+  .dismiss-message button {
+    width: 348px;
+    position: fixed;
+    bottom: 8%;
+    left: 9%;
+    cursor: pointer;
+  }
+
+  .dismiss-message button:hover {
+    background: linear-gradient(
+      to left,
+      hsl(16, 100%, 58%),
+      hsl(342, 100%, 67%)
+    );
+    box-shadow: 2px 8px 15px hsla(16, 100%, 58%, 0.5);
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+  }
+}
+/* End of Media query Desktop view */
